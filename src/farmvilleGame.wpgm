@@ -10,15 +10,14 @@ program farmville {
 	game.height(10)
 	game.width(10)
 	game.ground("ground.png")
-	//game.errorReporter(hector)
+	
 	
 // Visuales
 
 	game.addVisual(hector)
-	
+	game.errorReporter(hector)
 // Acciones 
 
-	/* considerar usar una variable y aplicarle varios metodos  */
 	keyboard.m().onPressDo{hector.sembrar(new MaizBebe())}	
 	keyboard.t().onPressDo{hector.sembrar(new Trigo0())}	
 	keyboard.o().onPressDo{hector.sembrar(new Tomaco())}

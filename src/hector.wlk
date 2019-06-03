@@ -25,8 +25,7 @@ object hector {
 	method regar(){ 
 		const objetos = game.colliders(self)
 		if (objetos.isEmpty()){
-			//throw new Exception ("No tengo nada para regar")
-			self.error("No tengo nada para regar")
+			throw new Exception ("No tengo nada para regar")
 		}
 		self.regarMaiz(objetos.head())
 		self.regarTrigo(objetos.head())
@@ -125,7 +124,7 @@ object hector {
 		}
 	}
 	
-	method cosechar(){ // agregar los correspondientes if
+	method cosechar(){ 
 		const trigo2 = new Trigo2()
 		const trigo3 = new Trigo3()
 		const maiz = new MaizAdulto()
@@ -133,14 +132,13 @@ object hector {
 		
 		const objetos = game.colliders(self)
 		if (objetos.isEmpty()){
-			self.error("No tengo nada para cosechar")
-			//throw new Exception ("No tengo nada para cosechar")
+			throw new Exception ("No tengo nada para cosechar")
 		}else{
 			if(objetos.head().image() == trigo2.image() || objetos.head().image() == trigo3.image() || objetos.head().image() == maiz.image() || objetos.head().image() == tomaco.image()){
 			cosechas.add(objetos.head())
 			game.removeVisual(objetos.head())
 			}else{
-				self.error("No tengo nada para cosechar")
+				throw new Exception ("No tengo nada para cosechar")
 			}
 		}	
 	}
